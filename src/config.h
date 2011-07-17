@@ -27,4 +27,6 @@
 // math configuration
 typedef double real;
 
+#define FP_ERROR 1e-9
+
 #endif

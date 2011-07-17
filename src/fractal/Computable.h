@@ -1,18 +1,17 @@
 #ifndef CRYSTALLIZER_FRACTAL__COMPUTABLE_H
 #define CRYSTALLIZER_FRACTAL__COMPUTABLE_H
 
-#include <complex>
-
-#include "config.h"
+#include "DataPoint.h"
 
 namespace Crystallizer {
 namespace Fractal {
 
+/** Base class for fractal computation. Represents a computable function. */
 class Computable {
 public:
 	virtual ~Computable() {}
 	
-	virtual std::complex<real> calculate(std::complex<real> z) = 0;
+	virtual DataPoint calculate(DataPoint z) = 0;
 };
 
 }  // namespace Fractal
