@@ -14,8 +14,7 @@ DataPoint ComputableRange::Iterator::next() {
 }
 
 bool ComputableRange::Iterator::hasNext() {
-	DataPoint dp = calcNext();
-	return range.isInside(dp);
+	return range.isInside(point);
 }
 
 DataPoint ComputableRange::Iterator::calcNext() {

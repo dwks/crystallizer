@@ -89,10 +89,9 @@ bool WorkerMind::MandelbrotReceiver::receive(const std::string &data) {
     Fractal::ComputableRange::Iterator it = range.getIterator();
     while(it.hasNext()) {
         Fractal::DataPoint data = it.next();
-        Fractal::DataPoint result
-            = mandelbrot.calculate(data, bailoutDistance, bailoutIterations);
+        int result = mandelbrot.calculate(data, bailoutDistance, bailoutIterations);
         
-        LOG(FRACTAL, result.real() << "+" << result.imag() << "i");
+        LOG(FRACTAL, "(" << data.real() << " + " << data.imag() << "i): " << result);
     }
     
     return false;
