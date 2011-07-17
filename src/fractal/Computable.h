@@ -11,7 +11,8 @@ class Computable {
 public:
 	virtual ~Computable() {}
 	
-	virtual DataPoint calculate(DataPoint z) = 0;
+	/** Perform a single depth calculation. */
+	virtual int calculate(DataPoint c, real bailoutDistance, int bailoutIterations) = 0;
 };
 
 }  // namespace Fractal
