@@ -7,16 +7,22 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 # List of all source directories
 aux_source_directory(hive HIVE_SOURCES)
+aux_source_directory(log LOG_SOURCES)
+aux_source_directory(misc MISC_SOURCES)
 aux_source_directory(network NETWORK_SOURCES)
 aux_source_directory(worker WORKER_SOURCES)
 
 # Source groups, for e.g. Visual Studio
 source_group("hive" FILES ${HIVE_SOURCES})
+source_group("log" FILES ${LOG_SOURCES})
+source_group("misc" FILES ${MISC_SOURCES})
 source_group("network" FILES ${NETWORK_SOURCES})
 source_group("worker" FILES ${WORKER_SOURCES})
 
 # More general source variables
 set(CORE_SOURCES
+    ${LOG_SOURCES}
+    ${MISC_SOURCES}
     ${NETWORK_SOURCES})
 set(HIVE_TARGET_SOURCES
     ${HIVE_SOURCES})
