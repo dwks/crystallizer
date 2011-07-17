@@ -1,6 +1,13 @@
 #include <iostream>
 
+#include "log/LogOpener.h"
+#include "log/Logger.h"
+
 int main() {
-    std::cout << "Hello, this is a worker.\n";
+    Crystallizer::Log::LogOpener::openLogs();
+    
+    LOG2(GLOBAL, PROGRESS, "Launching worker");
+    
+    Crystallizer::Log::LogOpener::closeLogs();
     return 0;
 }
