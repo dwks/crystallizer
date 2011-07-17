@@ -23,9 +23,7 @@ DataPoint ComputableRange::Iterator::calcNext() {
 	if(!range.isInside(p))
 		p = DataPoint(
 			range.getStart().real(),
-			point + DataPoint(
-				0.0,
-				range.getGranularity().imag()));
+			point.imag() + range.getGranularity().imag());
 	return p;
 }
 

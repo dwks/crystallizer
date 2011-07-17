@@ -13,9 +13,9 @@ public:
 	private:
 		ComputableRange &range;
 		DataPoint point;
-	protected:
-		Iterator(ComputableRange &range) : range(range), point(range.getStart()) {}
 	public:
+		Iterator(ComputableRange &range) : range(range), point(range.getStart()) {}
+		
 		DataPoint next();
 		bool hasNext();
 	private:
