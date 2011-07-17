@@ -37,8 +37,8 @@ include_directories(${Boost_INCLUDE_DIRS})
 set(CORE_LIBRARY core)
 add_library(${CORE_LIBRARY} ${CORE_SOURCES})
 
-set(HIVE_TARGET client)
-set(WORKER_TARGET server)
+set(HIVE_TARGET hive)
+set(WORKER_TARGET worker)
 add_executable(${HIVE_TARGET} ${HIVE_TARGET_SOURCES})
 add_executable(${WORKER_TARGET} ${WORKER_TARGET_SOURCES})
 
