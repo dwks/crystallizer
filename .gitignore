@@ -1,0 +1,12 @@
+# Generic ignores
+*~
+*.o
+*.a
+
+# cmake stuff
+/CMakeCache.txt
+/cmake_install.cmake
+/CMakeFiles
+/build
+Makefile
+
