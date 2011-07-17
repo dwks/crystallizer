@@ -23,7 +23,7 @@ private:
     
     std::vector<char> buffer;
     
-    typedef std::vector<boost::weak_ptr<DataReceiver> > ReceiverListType;
+    typedef std::vector<boost::shared_ptr<DataReceiver> > ReceiverListType;
     ReceiverListType receiverList;
 public:
     ClientSocket(boost::asio::io_service &io_service,

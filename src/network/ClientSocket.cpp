@@ -135,12 +135,16 @@ void ClientSocket::readDataHandler(const boost::system::error_code &error,
     LOG(NETWORK, "Received packet [" << escape(data) << "]");
     
     for(ReceiverListType::size_type x = 0; x < receiverList.size(); x ++) {
-        if(receiverList[x].expired()) {
-            receiverList.erase(receiverList.begin() + x);
-            x --;
+        //LOG(NETWORK, "Observer " << x << " " << &receiverList[x]);
+        if(receiverList[x]->receive(data)) {
+            // keep this observer
+            break;
         }
         else {
-            if(!receiverList[x].lock()->receive(data)) break;
+            // throw away this observer
+            receiverList.erase(receiverList.begin() + x);
+            x --;
+            break;
         }
     }
     
