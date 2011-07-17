@@ -1,4 +1,5 @@
 #include "ServerSocket.h"
+#include "WorkerList.h"
 
 #include "boost/bind.hpp"
 #include "boost/asio/placeholders.hpp"
@@ -41,7 +42,8 @@ void ServerSocket::acceptHandler(const boost::system::error_code &error) {
         << ":"
         << newSocket->remote_endpoint().port());
     
-    // !!!
+    list->addWorker(
+        boost::shared_ptr<ClientSocket>(new ClientSocket(newSocket)));
     
     // discard reference to the socket
     newSocket.reset();

@@ -11,6 +11,7 @@ TypeRegistry::TypeRegistry() {
     addNextType(Subsystem::GLOBAL, "PROGRESS");
     
     addNextType(Subsystem::NETWORK, "ERROR");
+    addNextType(Subsystem::NETWORK, "CONNECT");
     
     addNextType(Subsystem::FRACTAL, "ERROR");
 }
