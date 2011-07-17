@@ -24,6 +24,9 @@
     #define USE_POSIX_LOG_OPENER
 #endif
 
+// network configuration
+#define DEFAULT_PORT 8225
+
 // math configuration
 typedef double real;
 
