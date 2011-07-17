@@ -3,6 +3,9 @@
 *.o
 *.a
 
+# KDevelop 4 ignores.
+*.kdev*
+
 # cmake stuff
 /CMakeCache.txt
 /cmake_install.cmake
