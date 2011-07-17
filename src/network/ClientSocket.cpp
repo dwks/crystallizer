@@ -134,6 +134,16 @@ void ClientSocket::readDataHandler(const boost::system::error_code &error,
     std::string data(&buffer[0], buffer.size());
     LOG(NETWORK, "Received packet [" << escape(data) << "]");
     
+    for(ReceiverListType::size_type x = 0; x < receiverList.size(); x ++) {
+        if(receiverList[x].expired()) {
+            receiverList.erase(receiverList.begin() + x);
+            x --;
+        }
+        else {
+            if(!receiverList[x].lock()->receive(data)) break;
+        }
+    }
+    
     registerReadHeaderHandler();
 }
 

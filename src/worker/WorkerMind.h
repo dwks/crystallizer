@@ -3,10 +3,17 @@
 
 #include <string>
 
+#include "network/DataReceiver.h"
+
 namespace Crystallizer {
 namespace Worker {
 
 class WorkerMind {
+protected:
+    class Receiver : public Network::DataReceiver {
+    public:
+        virtual bool receive(const std::string &data);
+    };
 public:
     void run(const std::string &host, unsigned short port);
 };
