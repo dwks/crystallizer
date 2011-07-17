@@ -24,4 +24,7 @@
     #define USE_POSIX_LOG_OPENER
 #endif
 
+// math configuration
+typedef double real;
+
 #endif
