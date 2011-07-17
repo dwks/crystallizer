@@ -1,6 +1,6 @@
 #include <iostream>
 
 int main() {
-    std::cout << "Hello, this is the server.\n";
+    std::cout << "Hello, this is a worker.\n";
     return 0;
 }
